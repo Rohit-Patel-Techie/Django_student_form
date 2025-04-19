@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Student Admission Form</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            margin: 30px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f8fb;
+            color: #333;
+            position: relative;
+        }
+
+        /* Watermark */
+        body::before {
+            content: "Acharya Narendra Dev College";
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            font-size: 60px;
+            color: #e0e0e0;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            z-index: 0;
+            opacity: 0.2;
+            white-space: nowrap;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .photo {
+            width: 120px;
+            height: auto;
+            border: 2px solid #4CAF50;
+            padding: 4px;
+            background: white;
+        }
+
+        .header-content {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .header-content h2 {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: right;
+            position: relative;
+            z-index: 1;
+        }
+
+        .signature {
+            width: 150px;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        .label {
+            font-weight: bold;
+            background-color: #f9f9f9;
+            width: 35%;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            z-index: 1;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="{{ logo_path }}" alt="College Logo" style="width: 50px; position: absolute; top: 20px; left: 20px;">
+
+
+        <div class="header-content">
+            <h1>Acharya Narendra Dev College</h1>
+            <h2>Student Admission Form : 2025-26</h2>
+        </div>
+        <img src="{{ student.photo.url }}" alt="Student Photo" class="photo">
+    </div>
+
+    <!-- Info Line -->
+    <div class="info-row">
+        <div><strong>Form Number:</strong> {{ student.id }}</div>
+        <div><strong>Submission Date:</strong> {{ student.created_at|date:"F d, Y" }}</div>
+    </div>
+
+    <!-- Student Detail Table -->
+    <table>
+        <tr>
+            <td class="label">Name</td>
+            <td>{{ student.student_name }}</td>
+        </tr>
+        <tr>
+            <td class="label">Father Name</td>
+            <td>{{ student.father_name }}</td>
+        </tr>
+        <tr>
+            <td class="label">Mother Name</td>
+            <td>{{ student.mother_name }}</td>
+        </tr>
+        <tr>
+            <td class="label">Birth Date</td>
+            <td>{{ student.birth_date }}</td>
+        </tr>
+        <tr>
+            <td class="label">Gender</td>
+            <td>{{ student.gender }}</td>
+        </tr>
+        <tr>
+            <td class="label">Present Address</td>
+            <td>{{ student.present_address }}</td>
+        </tr>
+        <tr>
+            <td class="label">Nationality</td>
+            <td>{{ student.nationality }}</td>
+        </tr>
+        <tr>
+            <td class="label">Phone Number</td>
+            <td>{{ student.phone_number }}</td>
+        </tr>
+        <tr>
+            <td class="label">Email Address</td>
+            <td>{{ student.email_address }}</td>
+        </tr>
+        <tr>
+            <td class="label">Occupation</td>
+            <td>{{ student.occupation }}</td>
+        </tr>
+        <tr>
+            <td class="label">Status</td>
+            <td>{{ student.status }}</td>
+        </tr>
+        <tr>
+            <td class="label">Course Name</td>
+            <td>{{ student.course_name }}</td>
+        </tr>
+    </table>
+
+    <!-- Footer with Signature -->
+    <div class="footer">
+        <p><strong>Signature:</strong></p>
+        <img src="{{ student.signature.url }}" alt="Signature" class="signature">
+    </div>
+
+</body>
+
+</html>
