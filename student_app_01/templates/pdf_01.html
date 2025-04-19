@@ -136,7 +136,7 @@
             <h2>Student Admission Form : 2025-26</h2>
         </div>
 <!--         <img src="{{ student.photo.url }}" alt="Student Photo" class="photo"> -->
-        <img src="{{ request.build_absolute_uri(student.photo.url) }}" alt="Student Photo" class="photo" >
+        <img src="{{ photo_url }}" alt="Student Photo" class="photo">
 
     </div>
 
@@ -202,7 +202,7 @@
     <div class="footer">
         <p><strong>Signature:</strong></p>
 <!--         <img src="{{ student.signature.url }}" alt="Signature" class="signature"> -->
-        <img src="{{ request.build_absolute_uri(student.signature.url) }}" alt="Signature" class="signature" >
+        <img src="{{ signature_url }}" alt="Signature" class="signature">
     </div>
 
 </body>
