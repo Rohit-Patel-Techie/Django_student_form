@@ -135,7 +135,9 @@
             <h1>Acharya Narendra Dev College</h1>
             <h2>Student Admission Form : 2025-26</h2>
         </div>
-        <img src="{{ student.photo.url }}" alt="Student Photo" class="photo">
+<!--         <img src="{{ student.photo.url }}" alt="Student Photo" class="photo"> -->
+        <img src="{{ request.build_absolute_uri(student.photo.url) }}" alt="Student Photo" class="photo" >
+
     </div>
 
     <!-- Info Line -->
@@ -199,7 +201,8 @@
     <!-- Footer with Signature -->
     <div class="footer">
         <p><strong>Signature:</strong></p>
-        <img src="{{ student.signature.url }}" alt="Signature" class="signature">
+<!--         <img src="{{ student.signature.url }}" alt="Signature" class="signature"> -->
+        <img src="{{ request.build_absolute_uri(student.signature.url) }}" alt="Signature" class="signature" >
     </div>
 
 </body>
