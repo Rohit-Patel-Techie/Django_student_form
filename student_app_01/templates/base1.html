@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #004080;
+            padding: 1rem 2rem;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .form-container{
+            max-width: 50%;
+            margin: 40px auto;
+            /* padding: 20px; */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 14px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        button {
+            background: #2980b9;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #1abc9c;
+            transform: translateY(-2px);
+        }
+
+        /* .footer-image {
+            width: 100%;
+            max-height: 300px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        
+        } */
+        .form-container img {
+            width: 100%;
+            height: 15rem;
+            opacity: 0.9;
+            /* margin: -20px -20px ; */
+            /* margin-left: -20px; */
+            /* margin-top: 5px; */
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Student Portal</div>
+        <div class="links">
+            <a href="/accounts/home">Home</a>
+            <a href="/accounts/login/">Login / Sign Up</a>
+            <a href="http://127.0.0.1:8000/form">Form Fill</a>
+            <!-- <a href="/form-status/">Form Status</a> -->
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        &copy; 2025 Student Admission Portal. All rights reserved.
+    </footer>
+</body>
+
+</html>

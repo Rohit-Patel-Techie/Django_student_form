@@ -7,7 +7,9 @@ from weasyprint import HTML
 from django.conf import settings
 from django.templatetags.static import static
 import os
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def student_create(request):
     if request.method == 'POST':
         form = StudentForm(request.POST, request.FILES)
